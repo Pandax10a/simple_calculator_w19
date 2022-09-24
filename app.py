@@ -88,7 +88,7 @@ elif (user_selected == 3):
 elif (user_selected == 4):
     print('the result: ', division_two(stored_input[0], stored_input[1]))
 
-
+# for my reference
 print(stored_input)
 
 
