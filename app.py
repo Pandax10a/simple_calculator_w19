@@ -1,7 +1,5 @@
 
 
-from math import nan
-
 # 4 functions here for the 4 math operations
 def add_two(num1, num2):
     add_result = float(num1) + float(num2)
