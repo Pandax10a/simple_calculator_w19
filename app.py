@@ -20,17 +20,35 @@ print('2. subtraction')
 print('3. multiplication')
 print('4. division')
 
-
+# using while and set to true so it will run the try infinite number of times
 while True:
     try:
         user_selected = int(input('choose, and enter the number: '))
         if(user_selected < 0 or user_selected > 5):
             print("that's outside the range")
         else:
+            # the break here is if the try no longer has ValueError problem so it breaks out of the while loop
             break
     except ValueError:
         print('you fat fingered something, try again')
 print(user_selected)
+
+
+stored_input = []
+if (user_selected == 1):
+    while True:
+        try:
+            num1 = float(input('enter the first number: '))
+            num2 = float(input('enter the second number: '))
+            stored_input.append(num1)
+            stored_input.append(num2)
+            
+            print('the result: ', add_two(num1, num2))
+            break
+        except ValueError:
+            print('both needs to be a numeric value, try again')
+
+print(stored_input)
 
 
 # user_selected = int(input('choose, and enter the number: '))
