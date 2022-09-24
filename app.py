@@ -69,7 +69,7 @@ while True:
     except ValueError:
         print('both needs to be a numeric value for operation 1 to 3, and second number can not be zero for division, try again')
 
-# have to copy and paste seperate rule for division
+
 
             
           
@@ -89,5 +89,18 @@ elif (user_selected == 4):
 # for my reference
 print(stored_input)
 
-
-# user_selected = int(input('choose, and enter the number: '))
+# for bonus user can run it again as many times as they want
+while True:
+    answer_retry = input('y for try again, and n for quit: ')
+    if (answer_retry == 'y'):
+        # code to reload the page
+        from imp import reload
+        import app
+        reload(app)
+        break
+    elif (answer_retry == 'n'):
+        # code to stop the code, since break failed if previous entered value was y
+        print('good bye')
+        import sys
+        from sys import exit
+        sys.exit()
