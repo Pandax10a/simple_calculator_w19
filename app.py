@@ -2,16 +2,22 @@
 
 from math import nan
 
-
+# 4 functions here for the 4 math operations
 def add_two(num1, num2):
     add_result = float(num1) + float(num2)
     return add_result
 
-# try:
-#     user_selected = input("select the operator", '1. add', '2. subtract', '3. mul')
-#     if (user_selected == 1):
-#         num1_input = input('enter your first number:')  
-# except:
+def subtraction_of_two(num1, num2):
+    the_result = float(num1) - float(num2)
+    return the_result
+
+def multiplication_two(num1, num2):
+    the_result = float(num1) * float(num2)
+    return the_result
+
+def division_two(num1, num2):
+    the_result = float(num1) / float(num2)
+    return the_result
 
 
 print('Welcome, this is a simple calculator. ', "here are the options")
@@ -35,18 +41,41 @@ print(user_selected)
 
 
 stored_input = []
-if (user_selected == 1):
-    while True:
-        try:
-            num1 = float(input('enter the first number: '))
-            num2 = float(input('enter the second number: '))
-            stored_input.append(num1)
-            stored_input.append(num2)
+
+while True:
+    try:
+        num1 = float(input('enter the first number: '))
+        if(user_selected == 4):
+            num2 = float(input('enter the second number and it can not be 0: '))
+            if(num2 == 0):
+                num2 = 'error'
+                print('this number can not be zero')
+                float(num2)
+        stored_input.append(num1)
+        stored_input.append(num2)
             
-            print('the result: ', add_two(num1, num2))
-            break
-        except ValueError:
-            print('both needs to be a numeric value, try again')
+          
+        break
+    except ValueError:
+        print('both needs to be a numeric value for operation 1 to 3, and second number can not be zero for division, try again')
+
+# have to copy and paste seperate rule for division
+
+            
+          
+        
+    except ValueError:
+        print('both needs to be a numeric value, try again')
+
+if (user_selected == 1):
+    print('the result: ', add_two(stored_input[0], stored_input[1]))
+elif (user_selected == 2):
+    print('the result: ', subtraction_of_two(stored_input[0], stored_input[1]))
+elif (user_selected == 3):
+    print('the result: ', multiplication_two(stored_input[0], stored_input[1]))
+elif (user_selected == 4):
+    print('the result: ', division_two(stored_input[0], stored_input[1]))
+
 
 print(stored_input)
 
