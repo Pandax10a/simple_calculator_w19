@@ -1,16 +1,18 @@
 
 
 # 4 functions here for the 4 math operations
-def add_two(num1, num2):
-    add_result = float(num1) + float(num2)
+def add_two(num):
+    add_result = sum(num)
     return add_result
 
-def subtraction_of_two(num1, num2):
-    the_result = float(num1) - float(num2)
+def subtraction_of_two(num):
+    the_result = num[0] - sum(num[1:])
     return the_result
 
-def multiplication_two(num1, num2):
-    the_result = float(num1) * float(num2)
+
+def multiplication_two(num):
+    import math
+    the_result = math.prod(num)
     return the_result
 
 def division_two(num1, num2):
@@ -60,9 +62,9 @@ while True:
                     float(num2)
         else:
             num2 = float(input('enter the second number: '))
-            
-        stored_input.append(num1)
-        stored_input.append(num2)
+                
+            stored_input.append(num1)
+            stored_input.append(num2)
             
           
         break
@@ -78,11 +80,11 @@ while True:
         print('both needs to be a numeric value, try again')
 # try to make it more compact with conditionals in using the def
 if (user_selected == 1):
-    print('the result: ', add_two(stored_input[0], stored_input[1]))
+    print('the result: ', add_two(stored_input))
 elif (user_selected == 2):
-    print('the result: ', subtraction_of_two(stored_input[0], stored_input[1]))
+    print('the result: ', subtraction_of_two(stored_input))
 elif (user_selected == 3):
-    print('the result: ', multiplication_two(stored_input[0], stored_input[1]))
+    print('the result: ', multiplication_two(stored_input))
 elif (user_selected == 4):
     print('the result: ', division_two(stored_input[0], stored_input[1]))
 
