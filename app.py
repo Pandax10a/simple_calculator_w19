@@ -48,12 +48,14 @@ stored_input = []
 while True:
     try:
         num1 = float(input('enter the first number: '))
+        # conditions when division is selected
         if(user_selected == 4):
-            
+            # if first number is 0, function was having a fit
             if(num1 == 0):
                 num2 = float(input('enter the second number and it can be 0: '))
             else:
                 num2 = float(input('enter the second number and it can not be 0: '))
+                # condition for dividing things by 0, it will change the value to force it to ValueError
                 if(num2 == 0):
                     num2 = 'error'
                     print('this number can not be zero')
@@ -76,7 +78,7 @@ while True:
         
     except ValueError:
         print('both needs to be a numeric value, try again')
-
+# try to make it more compact with conditionals in using the def
 if (user_selected == 1):
     print('the result: ', add_two(stored_input[0], stored_input[1]))
 elif (user_selected == 2):
