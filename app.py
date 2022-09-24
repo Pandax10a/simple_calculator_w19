@@ -16,8 +16,11 @@ def multiplication_two(num1, num2):
     return the_result
 
 def division_two(num1, num2):
-    the_result = float(num1) / float(num2)
-    return the_result
+    if(num1 == 0 and num2 == 0):
+        return 0
+    else:
+        the_result = float(num1) / float(num2)
+        return the_result
 
 
 print('Welcome, this is a simple calculator. ', "here are the options")
@@ -46,11 +49,18 @@ while True:
     try:
         num1 = float(input('enter the first number: '))
         if(user_selected == 4):
-            num2 = float(input('enter the second number and it can not be 0: '))
-            if(num2 == 0):
-                num2 = 'error'
-                print('this number can not be zero')
-                float(num2)
+            
+            if(num1 == 0):
+                num2 = float(input('enter the second number and it can be 0: '))
+            else:
+                num2 = float(input('enter the second number and it can not be 0: '))
+                if(num2 == 0):
+                    num2 = 'error'
+                    print('this number can not be zero')
+                    float(num2)
+        else:
+            num2 = float(input('enter the second number: '))
+            
         stored_input.append(num1)
         stored_input.append(num2)
             
